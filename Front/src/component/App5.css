@@ -23,4 +23,9 @@
     background-color: #81D959;
    
   }
+  .card-body p {
+    float: left;
+    font-family: 'Bahnschrift Light Condensed', sans-serif;
+    font-size: 12px;
+  }
   

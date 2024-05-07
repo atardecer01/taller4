@@ -3,6 +3,10 @@ import Cards from "./component/Tarjetas";
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import './page.css'
+import {FaBars} from "react-icons/fa"
+import { NavLink } from "react-router-dom";
+
+
 
 function Inicio() {
 

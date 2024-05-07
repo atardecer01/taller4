@@ -1,39 +1,47 @@
 
 import { useState } from "react";
 
-import { BiVideoRecording } from "react-icons/bi";
 import { FaBars } from "react-icons/fa";
-import { MdPeopleAlt } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import "./sidebar.css";
- import SearchComponent from "./SearchComponent"
+import SearchComponent from "./SearchComponent"
+import { SlLogin } from "react-icons/sl";
+import { FaUserPlus } from "react-icons/fa6";
+import { MdCampaign } from "react-icons/md";
+import { FaHome } from "react-icons/fa";
 
 import React from 'react';
 
 const Inicio= ({children}) => {
-
+  
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
-  
   const menuItem = [
+    
+    {
+      path: "/",
+      name: "Home",
+      icon:<FaHome />
+
+    },
    
     {
       path: "/Login",
       name: "Iniciar sesion",
-      icon:<BiVideoRecording />
+      icon:<SlLogin />
 
     },
     {
       path: "/registro",
       name: "Registrarse",
-      icon:<MdPeopleAlt />
+      icon:<FaUserPlus />
 
     }
     ,
     {
       path: "/alerta",
       name: "Alerta",
-      icon:<MdPeopleAlt />
+      icon:<MdCampaign />
 
     }
   ]

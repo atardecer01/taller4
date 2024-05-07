@@ -83,13 +83,15 @@ const buscar = async (req, res, next) => {
   try {
     const resultado0 = await getResultFromGoogle(search);
     const resultado1 = await getResultFromGoogle1(search);
-    const resultado = resultado0+resultado1
+
+    const resultado = resultado0
+
       
     // Enviar respuesta con el token
     res.status(200).json({ respuesta: 'ok', resultados: resultado });
   } catch (error) {
     console.log(error);
-    res.status(500).json('Error interno del servidor1');
+    res.status(500).json('Error interno del servidor1', error);
   }
 };
 

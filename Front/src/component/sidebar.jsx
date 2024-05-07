@@ -4,32 +4,41 @@ import {FaBars} from "react-icons/fa"
 import { NavLink } from "react-router-dom";
 
 import "./sidebar.css"
-import { BiVideoRecording } from "react-icons/bi";
-import { MdPeopleAlt } from "react-icons/md";
+import { SlLogin } from "react-icons/sl";
+import { FaUserPlus } from "react-icons/fa6";
+import { MdCampaign } from "react-icons/md";
+import { FaHome } from "react-icons/fa";
 
 const Sidebar = ({children}) => {
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
   
   const menuItem = [
+    
+    {
+      path: "/",
+      name: "Home",
+      icon:<FaHome />
+
+    },
    
     {
       path: "/Login",
       name: "Iniciar sesion",
-      icon:<BiVideoRecording />
+      icon:<SlLogin />
 
     },
     {
       path: "/registro",
       name: "Registrarse",
-      icon:<MdPeopleAlt />
+      icon:<FaUserPlus />
 
     }
     ,
     {
       path: "/alerta",
       name: "Alerta",
-      icon:<MdPeopleAlt />
+      icon:<MdCampaign />
 
     }
   ]
