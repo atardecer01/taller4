@@ -89,7 +89,7 @@ const buscar = async (req, res, next) => {
     res.status(200).json({ respuesta: 'ok', resultados: resultado });
   } catch (error) {
     console.log(error);
-    res.status(500).json('Error interno del servidor1');
+    res.status(500).json('Error interno del servidor1', error);
   }
 };
 
