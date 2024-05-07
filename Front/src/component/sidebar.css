@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+}
+
+.top_sectionp {
+  background-color:#D1F2C2 /* Just for visualization */
+  /* Adjust other styles as needed */
+}
+
+.sidebar {
+  background: #04BF55;
+  color:#D1F2C2;
+  height: 100vh;
+  /* Add your other sidebar styles */
+}
+
+
+
+/*---*/
+
+/*color de la barra y las letras, tamaño de la barra*/
+.sidebar{
+  background:#7ED957;
+  color: rgb(255, 255, 255);
+  height:' 100%';
+  width: ' 100%';
+}
+
+.top_section{
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.top_sectionp {
+  margin-left: auto; /* Moves top_sectionp to the right */
+  padding: 20px 15px;
+}
+
+.logo{
+  font-size: 30px;
+}
+
+.bars{
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
+}
+
+.link{
+  display: flex;
+  color: rgb(255, 255, 255);
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+
+.link:hover{
+  background:#04BF55 ;
+  color: rgb(255, 255, 255);;
+  transition: all 0.5s;
+}
+
+.active{
+  background:#04BF55;
+  color: rgb(255, 255, 255);;
+}
+
+.icon, .link_test{
+  font-size: 20px;
+}
+
+
+.mensaje{
+  display: flex;
+  margin-left: 24%;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 50%;
+}
+
+.mensaje input {
+  width: 100%;
+  padding: 16px; /* Puedes ajustar el relleno según sea necesario */
+  box-sizing: border-box; /* Asegura que el ancho incluya el relleno y el borde */
+  margin-right: 10px;
+}

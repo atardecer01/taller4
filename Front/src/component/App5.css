@@ -1,0 +1,26 @@
+
+  .form-control {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+    transition: box-shadow 0.3s ease; /* Agregar transición */
+  }
+  
+  .form-control:focus {
+    box-shadow: 0 4px 8px rgba(176, 89, 89, 0.2); /* Aumentar la sombra al enfocar */
+  }
+  .form-control {
+    color: #333; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+  }
+  
+  .form-control {
+    border-radius: 10px; /* Ajusta el valor según el grado de redondez deseado */
+    font-size: 25px; /* Ajusta el tamaño del texto según tus preferencias */
+    background-color: #81D959;
+  }
+  .boton2 {
+    border-radius: 5px; /* Ajusta el valor según el grado de redondez deseado */
+    font-size: 25px; /* Ajusta el tamaño del texto según tus preferencias */
+    background-color: #81D959;
+   
+  }
+  
