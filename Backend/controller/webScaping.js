@@ -31,8 +31,9 @@ async function getResultFromGoogle(query)
     });
 
     console.log(listadoResultados);
-    return listadoResultados;
     await browser.close();
+    return listadoResultados;
+    
 
 
 }
@@ -67,8 +68,9 @@ async function getResultFromGoogle1(query)
     });
 
     console.log(listadoResultados);
-    return listadoResultados;
     await browser.close();
+    return listadoResultados;
+    
 
 
 }
