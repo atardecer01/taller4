@@ -9,6 +9,7 @@ import { SlLogin } from "react-icons/sl";
 import { FaUserPlus } from "react-icons/fa6";
 import { MdCampaign } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
+import { ImExit } from "react-icons/im";
 
 import React from 'react';
 
@@ -42,6 +43,12 @@ const Inicio= ({children}) => {
       path: "/alerta",
       name: "Alerta",
       icon:<MdCampaign />
+
+    },
+    {
+      path: "/salir",
+      name: "Cerrar sesion",
+      icon:<ImExit/>
 
     }
   ]

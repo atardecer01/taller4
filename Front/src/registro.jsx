@@ -8,6 +8,8 @@ import { FaHome } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { MdPeopleAlt } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+import { ImExit } from "react-icons/im";
+
 function Registro() {
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
@@ -38,6 +40,12 @@ function Registro() {
       path: "/alerta",
       name: "Alerta",
       icon:<MdCampaign />
+
+    },
+    {
+      path: "/salir",
+      name: "Cerrar sesion",
+      icon:<ImExit/>
 
     }
   ]

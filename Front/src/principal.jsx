@@ -1,6 +1,6 @@
 
 import './page.css'
-import Sidebar from './component/sidebar';
+import Sidebar from './component/alerta';
 
 function Principal() {
     return (

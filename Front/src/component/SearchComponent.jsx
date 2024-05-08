@@ -9,6 +9,7 @@ const SearchComponent = () => {
   // Set up state for users and search term
   const [search, setSearch] = useState("");
   const [search2, setSearch2] = useState("");
+  const [loading, setLoading] = useState(false);
   const [cards, setcards] = useState([
     {
      
@@ -40,7 +41,7 @@ const SearchComponent = () => {
   
   const handleAlert = async (e) => {
     const nombre = localStorage.getItem('correo');
-    
+    console.log(nombre)
     if (nombre !== null) { 
       http://localhost:4000/api/alert
       try {
@@ -49,16 +50,14 @@ const SearchComponent = () => {
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ search,search2 })
+          body: JSON.stringify({ alerta: search, email: nombre }) // Modifica los nombres de las propiedades según corresponda
         });
-    
-        const data = await response.json();        
-        localStorage.setItem('correo', email); // Corregido aquí
-        navigate('/');
-        
+      
+        const data = await response.json();
+        console.log(data);
       } catch (error) {
-        console.error('Error al iniciar sesión:', error);
-        alert('Ocurrió un error al iniciar sesión. Por favor, intenta de nuevo más tarde.');
+        console.error('Error al agregar la alerta:', error);
+        alert('Ocurrió un error al agregar la alerta. Por favor, intenta de nuevo más tarde.');
       }
      
     } else {
@@ -83,6 +82,7 @@ const SearchComponent = () => {
     else
     {
     try {
+      setLoading(true);
       const response = await fetch('http://localhost:4000/api/webScaping', {
         method: 'POST',
         headers: {
@@ -95,7 +95,8 @@ const SearchComponent = () => {
       console.log(data);
       const res = data.resultados
       if(res != []){
-        setcards(res)   
+        setcards(res)
+        setLoading(false);   
       }
         
 
@@ -106,7 +107,7 @@ const SearchComponent = () => {
     }
   }
   };
-  // Render the component
+  const halfScreenWidth = '50vw'; // Obtener la mitad del ancho de la pantalla en unidades de viewport width (vw)
   return (
     <div >
      
@@ -135,7 +136,12 @@ const SearchComponent = () => {
     />
 
     <button  className="boton2" type="submit"    style={{ margin: '50px', padding: 0 }} onClick={handleBuscar}>Buscar</button>
-
+    {loading && (
+       <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(255, 255, 255, 0.8)',padding: `calc(${halfScreenWidth} / 6)`, borderRadius: '10px', boxShadow: '0 0 100px rgba(0, 0, 0, 0.2)', fontSize: '24px' }}>
+       <p style={{ margin: 0 }}>Cargando...</p>
+     </div>
+     
+      )}
     <div className="d-flex justify-content-center align-items-center h-100">
     <Grid container spacing={3}>
     {cards.map(({ title, content, url, id }) => (
