@@ -45,7 +45,7 @@ const SearchComponent = () => {
     if (nombre !== null) { 
       http://localhost:4000/api/alert
       try {
-        const response = await fetch('http://localhost:4000/api/alert', {
+        const response = await fetch('https://jobscout-k4nf.onrender.com/api/alert', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ const SearchComponent = () => {
     {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:4000/api/webScaping', {
+      const response = await fetch('https://jobscout-k4nf.onrender.com/api/webScaping', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
